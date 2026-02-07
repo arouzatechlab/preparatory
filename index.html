@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preparatory Stage | Vidya Vihar International School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-bg: #a1105d;
+        --accent-gold: #ffcc00;
+        --text-white: #ffffff;
+        --text-dark: #333333;
+        --bg-light: #f9f9f9;
+        --nav-navy: #003366;
+        --nav-navy-hover: #004488;
+        --font-heading: "Poppins", sans-serif;
+        --font-body: "Inter", sans-serif;
+        --transition: all 0.3s ease;
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+        background-color: var(--text-white);
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        height: 40vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--text-white);
+        overflow: hidden;
+      }
+
+      .hero img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(rgba(161, 16, 93, 0.4), rgba(0, 0, 0, 0.6));
+        z-index: 2;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 3;
+        padding: 0 20px;
+      }
+
+      .hero-content h1 {
+        font-family: var(--font-heading);
+        font-size: 2.2rem;
+        margin-bottom: 5px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+        font-weight: 500;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Navigation Grid Section */
+      .nav-grid-section {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .slider-container {
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        position: relative;
+        height: 300px;
+      }
+
+      .slider-wrapper {
+        display: flex;
+        width: 400%;
+        height: 100%;
+        transition: transform 0.8s ease-in-out;
+      }
+
+      .slider-wrapper img {
+        width: 25%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .nav-panel {
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .nav-panel-header {
+        background-color: var(--accent-gold);
+        color: var(--text-white);
+        padding: 15px 20px;
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        text-align: center;
+      }
+
+      .nav-list {
+        list-style: none;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav-item {
+        flex-grow: 1;
+        display: flex;
+      }
+
+      .nav-item a {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 12px 20px;
+        text-decoration: none;
+        color: var(--text-white);
+        background-color: var(--nav-navy);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .nav-item a:hover {
+        background-color: var(--nav-navy-hover);
+        padding-left: 28px;
+      }
+
+      .nav-item a::before {
+        content: "<";
+        margin-right: 12px;
+        font-weight: bold;
+      }
+
+      /* Content Sections */
+      .content-section {
+        padding: 50px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        margin-bottom: 30px;
+      }
+
+      .section-header h2 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        color: var(--primary-bg);
+        margin-bottom: 8px;
+      }
+
+      .gold-underline {
+        width: 60px;
+        height: 4px;
+        background-color: var(--accent-gold);
+        border-radius: 2px;
+      }
+
+      .section-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .section-image {
+        width: 100%;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .section-image img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .section-text p {
+        margin-bottom: 15px;
+        text-align: justify;
+        font-size: 0.95rem;
+      }
+
+      /* Grid Cards */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 25px;
+      }
+
+      .card {
+        background-color: var(--bg-light);
+        padding: 18px;
+        border-radius: 8px;
+        border-left: 4px solid var(--accent-gold);
+        display: flex;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        font-size: 0.9rem;
+      }
+
+      /* Bullet Grid */
+      .bullet-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      .bullet-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+        font-size: 0.95rem;
+      }
+
+      .bullet-item::before {
+        content: "•";
+        color: var(--accent-gold);
+        font-weight: bold;
+        font-size: 1.4rem;
+      }
+
+      /* Responsive Layouts */
+      @media (min-width: 768px) {
+        .hero {
+          height: 50vh;
+        }
+        .hero-content h1 {
+          font-size: 3rem;
+        }
+
+        .nav-grid-section {
+          flex-direction: row;
+          height: 450px;
+        }
+
+        .slider-container,
+        .nav-panel {
+          flex: 1;
+          height: 100%;
+        }
+
+        .cards-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .bullet-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .section-flex {
+          flex-direction: row;
+          align-items: stretch;
+        }
+
+        .section-flex.reverse {
+          flex-direction: row-reverse;
+        }
+
+        .section-image,
+        .section-text {
+          flex: 1;
+        }
+
+        .section-image img {
+          height: 100%;
+          min-height: 400px;
+        }
+
+        .cards-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .section-header h2 {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <img
+        src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1920"
+        alt="Preparatory Stage Students"
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Preparatory Stage</h1>
+        <p>Strengthening the Foundation</p>
+      </div>
+    </section>
+
+    <!-- Navigation Grid Section -->
+    <section class="nav-grid-section">
+      <div class="slider-container">
+        <div class="slider-wrapper" id="sliderWrapper">
+          <img
+            src="https://images.unsplash.com/photo-1577891729319-f4871c6ecdf1?auto=format&fit=crop&q=80&w=1200"
+            alt="Learning Environment 1"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200"
+            alt="Learning Environment 2"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=1200"
+            alt="Learning Environment 3"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1200"
+            alt="Learning Environment 4"
+          />
+        </div>
+      </div>
+      <aside class="nav-panel">
+        <div class="nav-panel-header">Preparatory Stage</div>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#introduction">Introduction</a></li>
+          <li class="nav-item"><a href="#academics">Academics</a></li>
+          <li class="nav-item"><a href="#curriculum">Curriculum</a></li>
+          <li class="nav-item">
+            <a href="#assessment">Assessment and Evaluation</a>
+          </li>
+          <li class="nav-item"><a href="#activities">Activities</a></li>
+          <li class="nav-item"><a href="#learn-zone">Learn Zone</a></li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- Section 1: Introduction -->
+    <section id="introduction" class="content-section">
+      <div class="section-header">
+        <h2>Introduction</h2>
+        <div class="gold-underline"></div>
+      </div>
+      <div class="section-flex">
+        <div class="section-image">
+          <img
+            src="https://images.unsplash.com/photo-1523050335392-938ad1c39aae?auto=format&fit=crop&q=80&w=800"
+            alt="Preparatory Introduction"
+          />
+        </div>
+        <div class="section-text">
+          <p>
+            The Preparatory Stage marks a vital phase in a child’s educational
+            journey, transitioning from play-based learning to a more structured
+            approach. This stage focuses on nurturing foundational skills and
+            introducing core subjects like Mathematics, Environmental Studies
+            (EVS), and languages. Emphasizing critical thinking,
+            problem-solving, and inquiry-based learning, it prepares students
+            for deeper academic engagement while maintaining a strong
+            experiential and constructivist approach.
+          </p>
+          <p>
+            Aligned with the National Education Policy (NEP) and National
+            Curriculum Framework (NCF), our curriculum integrates arts, sports,
+            and physical education, ensuring the holistic development of each
+            child. With clear learning outcomes and diverse assessment methods,
+            the Preparatory Stage is designed to create a dynamic and engaging
+            learning environment, setting the stage for lifelong curiosity and
+            growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Academics -->
+    <section
+      id="academics"
+      class="content-section"
+      style="background-color: #fcfcfc"
+    >
+      <div class="section-header">
+        <h2>Academics</h2>
+        <div class="gold-underline"></div>
+      </div>
+      <div class="section-flex reverse">
+        <div class="section-image">
+          <img
+            src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800"
+            alt="Preparatory Academics"
+          />
+        </div>
+        <div class="section-text">
+          <p>
+            At Vidya Vihar International School, the Preparatory Stage (ages
+            8–11) builds upon the foundations laid during the early years,
+            guiding children toward more structured learning while preserving
+            their natural curiosity and enthusiasm for discovery. During this
+            critical stage of development, our curriculum aligns with the NEP
+            2020 framework to ensure a seamless transition from foundational to
+            preparatory education, emphasizing both academic excellence and the
+            holistic growth of each child.
+          </p>
+          <p>
+            The preparatory curriculum is enriched with opportunities for
+            children to develop their multiple intelligences, catering to
+            different learning styles and strengths. Through a blend of hands-on
+            activities, group projects, and collaborative learning experiences,
+            students cultivate their interpersonal, logical, spatial,
+            linguistic, and kinesthetic abilities.
+          </p>
+          <p>
+            Language development continues to be a focal point, with structured
+            activities such as storytelling sessions, group discussions,
+            presentations, and Quality Time Circle (QTC) to enhance
+            communication skills and confidence.
+          </p>
+          <p>
+            Music, dance, movement, art integration, digital interactive boards,
+            outdoor learning, nature walks, and creative exploration ensure
+            balanced intellectual, emotional, social, and physical development.
+            By combining structured academics with experiential learning, we
+            prepare students for lifelong learning and growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Curriculum -->
+    <section id="curriculum" class="content-section">
+      <div class="section-header">
+        <h2>Curriculum</h2>
+        <div class="gold-underline"></div>
+      </div>
+      <div class="section-flex">
+        <div class="section-image">
+          <img
+            src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&q=80&w=800"
+            alt="Preparatory Curriculum"
+          />
+        </div>
+        <div class="section-text">
+          <p>
+            The Preparatory Stage (Grade 3 to 5) at Vidya Vihar International
+            School transitions children into a more structured and formalized
+            learning environment while retaining joy, creativity, and curiosity.
+            This stage consolidates core skills and deepens conceptual
+            understanding across subjects.
+          </p>
+          <p>
+            Following the National Curriculum Framework for School Education and
+            NEP 2020, the curriculum emphasizes a child-centred, experiential
+            approach encouraging critical thinking, problem-solving, inquiry,
+            and self-expression. Subjects such as Mathematics, EVS, and
+            languages are explored through engaging, multi-sensory methods
+            connected to real-world contexts.
+          </p>
+          <p>
+            By blending academic rigour with creativity, play-based learning,
+            physical activity, and inclusive practices, we nurture confident,
+            curious learners ready for higher academic challenges.
+          </p>
+
+          <h3
+            style="
+              font-family: var(--font-heading);
+              color: var(--primary-bg);
+              margin-top: 25px;
+            "
+          >
+            Curricular Goals
+          </h3>
+          <div class="cards-grid">
+            <div class="card">Emphasis on Core Subjects</div>
+            <div class="card">Critical Thinking</div>
+            <div class="card">Well-Rounded Education</div>
+            <div class="card">Physical Development</div>
+            <div class="card">Socio-Emotional and Ethical Development</div>
+            <div class="card">Sensorial Enhancement</div>
+            <div class="card">Values and Ethics</div>
+            <div class="card">Leadership and Ethics</div>
+            <div class="card">Vocabulary Enrichment</div>
+            <div class="card">
+              General Awareness on facts and current affairs
+            </div>
+            <div class="card">Personal Development</div>
+            <div class="card">Computational Thinking</div>
+            <div class="card">Language and Literacy Development</div>
+            <div class="card">Aesthetical and Cultural Development</div>
+            <div class="card">Visual Arts</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 40px">
+        <h3 style="font-family: var(--font-heading); color: var(--primary-bg)">
+          Learning and Life Skills
+        </h3>
+        <div class="cards-grid">
+          <div class="card">Fine and Gross Motor Skills</div>
+          <div class="card">Reasoning and Problem-Solving Skills</div>
+          <div class="card">Language and Communication Skills</div>
+          <div class="card">Critical and Creative Thinking Skills</div>
+          <div class="card">Socio-Emotional Skills</div>
+          <div class="card">Interpersonal Skills</div>
+          <div class="card">Imagination Skills</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Assessment and Evaluation -->
+    <section
+      id="assessment"
+      class="content-section"
+      style="background-color: #fcfcfc"
+    >
+      <div class="section-header">
+        <h2>Assessment and Evaluation</h2>
+        <div class="gold-underline"></div>
+      </div>
+      <div class="section-flex reverse">
+        <div class="section-image">
+          <img
+            src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800"
+            alt="Preparatory Assessment"
+          />
+        </div>
+        <div class="section-text">
+          <p>
+            Aligned with NEP 2020 and the National Curriculum Framework,
+            assessment at the Preparatory Stage focuses on holistic development
+            rather than mere academic performance. Both formative and summative
+            assessments are integrated to enhance learning.
+          </p>
+          <p>
+            Formative Assessments include regular observations, quizzes,
+            classroom discussions, interactive activities, and peer feedback,
+            providing continuous insights and timely feedback.
+          </p>
+          <p>
+            Summative Assessments include three assessments during the academic
+            year, with detailed reports shared with parents highlighting
+            scholastic and co-scholastic progress.
+          </p>
+          <p>
+            Anecdotal Records and Portfolios document students’ work,
+            reflections, projects, and behavioural observations, offering
+            qualitative insights into socio-emotional and cognitive growth.
+          </p>
+          <p>
+            All assessments are systematically documented, culminating in a
+            Holistic Progress Report at the end of the academic year.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Activities -->
+    <section id="activities" class="content-section">
+      <div class="section-header">
+        <h2>Activities</h2>
+        <div class="gold-underline"></div>
+      </div>
+      <div class="section-flex">
+        <div class="section-image">
+          <img
+            src="https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?auto=format&fit=crop&q=80&w=800"
+            alt="Preparatory Activities"
+          />
+        </div>
+        <div class="bullet-grid">
+          <div class="bullet-item">Story Telling</div>
+          <div class="bullet-item">Indoor and Outdoor Games</div>
+          <div class="bullet-item">Nature Play</div>
+          <div class="bullet-item">Talent Show</div>
+          <div class="bullet-item">Music and Dance</div>
+          <div class="bullet-item">Art and Craft</div>
+          <div class="bullet-item">Outdoor Learning</div>
+          <div class="bullet-item">Yoga</div>
+          <div class="bullet-item">Zumba</div>
+          <div class="bullet-item">DEAR (Drop Everything And Read)</div>
+          <div class="bullet-item">Vocabulary</div>
+          <div class="bullet-item">Handwriting</div>
+          <div class="bullet-item">Quality Time Circle</div>
+        </div>
+      </div>
+    </section>
+
+    <div id="learn-zone" style="height: 50px"></div>
+
+    <script>
+      // Automatic Slider Logic
+      const sliderWrapper = document.getElementById("sliderWrapper");
+      let currentSlide = 0;
+      const totalSlides = 4;
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        if (sliderWrapper) {
+          sliderWrapper.style.transform = `translateX(-${currentSlide * 25}%)`;
+        }
+      }
+
+      setInterval(nextSlide, 3000);
+
+      // Active Navigation Logic
+      const sections = document.querySelectorAll(".content-section");
+      const navLinks = document.querySelectorAll(".nav-item a");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 250) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.style.backgroundColor = "var(--nav-navy)";
+          if (link.getAttribute("href") === `#${current}`) {
+            link.style.backgroundColor = "var(--nav-navy-hover)";
+            link.style.paddingLeft = "28px";
+            link.style.borderLeft = "5px solid var(--accent-gold)";
+          } else {
+            link.style.borderLeft = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
